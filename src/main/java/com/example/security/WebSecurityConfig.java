@@ -9,39 +9,39 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
+//@EnableWebSecurity
+//public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //
-//        http
-//                .authorizeRequests()
-//                .anyRequest()
-//                .authenticated()
-//                .and()
-//                .httpBasic();
-//    }
-
+////    @Override
+////    protected void configure(HttpSecurity http) throws Exception {
+////
+////        http
+////                .authorizeRequests()
+////                .anyRequest()
+////                .authenticated()
+////                .and()
+////                .httpBasic();
+////    }
+//
+////    @Autowired
+////    public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+////        authenticationManagerBuilder
+////                .inMemoryAuthentication()
+////                .withUser("beytullahzor")
+////                .password("{noop} root")
+////                .roles("USER");
+////
+////    }
+//
 //    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+//    public void configureGlobalEncryped(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+//
+//        PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//
 //        authenticationManagerBuilder
 //                .inMemoryAuthentication()
 //                .withUser("beytullahzor")
-//                .password("{noop} root")
+//                .password(passwordEncoder.encode("root"))
 //                .roles("USER");
-//
 //    }
-
-    @Autowired
-    public void configureGlobalEncryped(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-
-        PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-
-        authenticationManagerBuilder
-                .inMemoryAuthentication()
-                .withUser("beytullahzor")
-                .password(passwordEncoder.encode("root"))
-                .roles("USER");
-    }
-}
+//}
